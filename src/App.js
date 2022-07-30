@@ -4,27 +4,23 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import Categories from './components/Categories';
 import Books from './components/Books';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+const App = () => {
+  const state = useSelector((state) => state);
 
-  render() {
-    return (
-      <div className="App">
-        <Router>
-          <Routes>
-            <Route path="/" element={<Books />} />
-            <Route path="/Categories" element={<Categories />} />
-          </Routes>
-        </Router>
-      </div>
-    );
-  }
-}
+  return (
+    <div className="App">
+      <Router>
+        <Routes>
+          <Route path="/" element={<Books BooksList={state.books} />} />
+          <Route path="/Categories" element={<Categories Categories={state.categories} />} />
+        </Routes>
+      </Router>
+    </div>
+  );
+};
 
 export default App;
