@@ -1,37 +1,59 @@
-const ADD_BOOK = 'bookstore/books/ADD_BOOK';
-const DEL_BOOK = 'bookstore/books/REMOVE_BOOK';
+import uuid from 'react-uuid';
+
+const ADD = 'BOOK_ADDED';
+const DEL = 'BOOK_REMOVED';
+
+// Action creators
+export const addBook = ({ title, author }) => ({
+  type: ADD,
+  id: uuid(),
+  title,
+  author,
+});
+
+export const removeBook = (id) => ({
+  type: DEL,
+  id,
+});
 
 const getActionData = ({ id, title, author }) => ({
   id, title, author,
 });
 
-const bookReducer = (state = [], action = {}) => {
+const bookReducer = (state = [
+  {
+    id: uuid(),
+    title: 'book 1',
+    author: 'author 1',
+  },
+  {
+    id: uuid(),
+    title: 'book 2',
+    author: 'author 2',
+  },
+  {
+    id: uuid(),
+    title: 'book 1',
+    author: 'author 1',
+  },
+  {
+    id: uuid(),
+    title: 'book 2',
+    author: 'author 2',
+  },
+], action) => {
   switch (action.type) {
-    case ADD_BOOK:
+    case ADD:
       return [
         ...state,
         getActionData(action),
       ];
+    case DEL:
+      return state.filter((book) => book.id !== action.id);
 
-    case DEL_BOOK:
-      return [
-        ...state.slice(0, action.id), ...state.slice(action.id + 1, state.length),
-      ];
-
-    default: return state;
+    default:
+      return state;
   }
 };
-
-export const addBook = (id, title, author) => ({
-  type: ADD_BOOK,
-  id,
-  title,
-  author,
-});
-
-export const delBook = (id) => ({
-  type: DEL_BOOK,
-  id,
-});
 
 export default bookReducer;

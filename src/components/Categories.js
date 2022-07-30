@@ -1,22 +1,31 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { PropTypes } from 'prop-types';
 import Navbar from './Navbar';
+import { checkingStatus } from '../redux/categories/categories';
 
-class Categories extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = null;
-  }
+const Categories = ({ Categories }) => {
+  const dispatch = useDispatch();
 
-  render() {
-    return (
-      <>
-        <Navbar />
-        <main className="categories">
-          <button type="button">Check Status</button>
-        </main>
-      </>
-    );
-  }
-}
+  const check = () => {
+    dispatch(checkingStatus());
+  };
+
+  return (
+    <>
+      <Navbar />
+      <main className="categories">
+        <p>
+          {Categories}
+        </p>
+        <button type="button" onClick={() => check()}>Check status</button>
+      </main>
+    </>
+  );
+};
+
+Categories.propTypes = {
+  Categories: PropTypes.instanceOf(Array).isRequired,
+};
 
 export default Categories;
