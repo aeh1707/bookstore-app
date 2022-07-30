@@ -15,8 +15,6 @@ html {
 *::before,
 *::after {
   box-sizing: inherit;
-
-  /* border: 1px solid black; */
 }
 
 body {
@@ -24,7 +22,6 @@ body {
   padding: 0;
   color: #99afcd;
   font-family: 'Montserrat', sans-serif;
-  background-color: #7b828b;
 }
 
 .App {
