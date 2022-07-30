@@ -36,7 +36,7 @@ const Form = () => {
   };
 
   return (
-    <>
+    <section className="form-book">
       <h2>Add New Book</h2>
       <form onSubmit={submit}>
         <input type="text" id="title" name="title" onChange={readUserInput} placeholder="add title.." />
@@ -44,7 +44,7 @@ const Form = () => {
         <input type="text" id="category" name="category" onChange={readUserInput} placeholder="add category.." />
         <button type="submit">ADD BOOK</button>
       </form>
-    </>
+    </section>
   );
 };
 

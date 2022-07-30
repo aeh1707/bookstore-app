@@ -22,6 +22,7 @@ const Books = (props) => {
             </li>
           ))}
         </ul>
+        <hr />
         <Form />
       </main>
     </>
