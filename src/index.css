@@ -27,9 +27,8 @@ body {
 .App {
   width: 80vw;
   margin: 0 auto;
-  margin-top: 20px;
   background-color: white;
-  padding: 40px 60px;
+  padding: 20px 30px;
 }
 
 /* Navbar
