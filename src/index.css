@@ -1,27 +1,233 @@
-body {
-  margin: 0;
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    'Roboto',
-    'Oxygen',
-    'Ubuntu',
-    'Cantarell',
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/*
+blue sky #0290ff
+#4386bf
+
+*/
+
+/* General Styles
+************************** */
+
+html {
+  box-sizing: border-box;
 }
 
-code {
-  font-family:
-    source-code-pro,
-    Menlo,
-    Monaco,
-    Consolas,
-    'Courier New',
-    monospace;
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #99afcd;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.App {
+  width: 80vw;
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px 30px;
+}
+
+/* Navbar
+*************************** */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 10px 25px;
+  gap: 15px;
+  border-bottom: 1px solid #7b828b;
+}
+
+nav a {
+  font-weight: 300;
+  text-decoration: none;
+  color: #99afcd;
+  margin: 10px;
+}
+
+.fa-user {
+  color: #0290ff;
+  margin-left: 35vw;
+  border: 1px solid #c7dbe3;
+  border-radius: 50%;
+  padding: 11px;
+}
+
+h1 {
+  color: #0290ff;
+  margin-right: 30px;
+  font-weight: 700;
+}
+
+/* Book styles
+*********************************/
+
+.books-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 30px 0;
+}
+
+.books-list li {
+  display: block;
+  margin: 30px 0;
+}
+
+.book {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  border: 1px solid #e8e8e8;
+  padding: 20px 30px;
+}
+
+.book-info {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-title {
+  color: #191724;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+.book-category {
+  margin-bottom: 6px;
+  color: #1212127a;
+}
+
+.book-author {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 300;
+}
+
+.pipe {
+  width: 0.125px;
+  height: 4rem;
+  border: 1px solid #c7dbe3;
+}
+
+.book h4,
+.book h5,
+.book h3 {
+  margin: 2px;
+}
+
+.actions {
+  margin-top: 25px;
+  display: flex;
+  gap: 8px;
+}
+
+.actions button {
+  background-color: white;
+  font-family: 'Roboto Slab', serif;
+  color: #99afcd;
+  border: none;
+  height: 20px;
+}
+
+.actions .pipe {
+  height: 1.2rem;
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+  gap: 5vw;
+  width: 60%;
+}
+
+.progress .pipe {
+  width: 0.1px;
+}
+
+.progress-stat {
+  width: 48%;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.progress-circle {
+  width: 75px;
+  height: 75px;
+  border: 4px solid black;
+  border-radius: 50%;
+}
+
+.progress-percent {
+  color: #191724;
+  font-size: 2rem;
+}
+
+.progress-status {
+  display: block;
+}
+
+.progress-chapter {
+  width: 48%;
+}
+
+.progress-chapter button {
+  background-color: #0290ff;
+  color: white;
+  font-family: 'Roboto Slab', serif;
+  border: none;
+  padding: 5px 2px;
+  width: 140px;
+}
+
+.chapter-label {
+  font-size: 0.8rem;
+  font-family: 'Roboto Slab', serif;
+}
+
+.current-chapter {
+  font-size: 0.9rem;
+  font-family: 'Roboto Slab', serif;
+  color: #191724;
+}
+
+/* Form
+**************************/
+
+.form-book h2 {
+  color: #1212127a;
+  font-size: 1.45rem;
+}
+
+.form-book input {
+  padding: 12px;
+  width: 20vw;
+  margin-right: 15px;
+  border: 1px solid #e8e8e8;
+  border-radius: 5px;
+}
+
+.form-book input::placeholder {
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.2rem;
+}
+
+.form-book button {
+  background-color: #0290ff;
+  color: white;
+  font-family: 'Roboto Slab', serif;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 4px;
+  width: 100px;
+}
+
+hr {
+  font-size: 2px;
+  color: #e8e8e8;
 }
